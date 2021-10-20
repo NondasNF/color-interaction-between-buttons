@@ -6,13 +6,13 @@ var currentButtonSizeActive;
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    currentButtonActive = document.querySelector("#b1");
-    allButtons = document.querySelectorAll(".b");
+    currentButtonActive = document.querySelector("#color__button1");
+    allButtons = document.querySelectorAll(".color__buttons");
     colors = ["#0000FF", "#008000", "#D2691E", "#FF0000"];
     currentButtonActive.style.backgroundColor = colors[0];
     currentButtonActive.style.color = "#ffffff";
 
-    currentButtonSizeActive = document.querySelector("#bs3")
+    currentButtonSizeActive = document.querySelector("#size__button3")
     currentButtonSizeActive.style.color = "#ffffff";
     currentButtonSizeActive.style.backgroundColor = colors[0];
 
@@ -33,12 +33,12 @@ function getOthersButtons(buttonClicked, allColorButtons) {
     return newButtonObject;
 }
 function changeSizeButtonColor(color){
-    let allSizeButtons = document.querySelectorAll(".bs");
+    let allSizeButtons = document.querySelectorAll(".size__buttons");
     let currentSizeButton = allSizeButtons[currentButtonSizeActiveIndex];
     currentSizeButton.style.backgroundColor = color;
 }
 function changeColor(buttonClicked) {
-    let allColorButtons = document.querySelectorAll(".b");
+    let allColorButtons = document.querySelectorAll(".color__buttons");
     let buttonsObject = getOthersButtons(buttonClicked, allColorButtons);
     buttonsObject.otherButtons.forEach(function(otherButton){
         otherButton.style.backgroundColor = "";
@@ -50,7 +50,7 @@ function changeColor(buttonClicked) {
 }
 
 function changeSize(buttonClicked){
-    let allSizeButtons = document.querySelectorAll(".bs");
+    let allSizeButtons = document.querySelectorAll(".size__buttons");
     let sizeButtonsObject = getOthersButtons(buttonClicked, allSizeButtons);
 
     let currentColor = allSizeButtons[currentButtonSizeActiveIndex];
